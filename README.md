@@ -1,15 +1,15 @@
 # Chatbot React
 
-Este proyecto es un chatbot interactivo creado con React. Ofrece una interfaz de chat donde los usuarios pueden comunicarse con un bot y recibir respuestas en tiempo real. El objetivo es proporcionar una experiencia de usuario fluida y moderna.
+Este proyecto es un chatbot interactivo creado con React, diseñado para ser un asistente virtual personal para Matías. Su objetivo es responder preguntas sobre la trayectoria profesional, habilidades, proyectos y experiencia de Matías. Es una herramienta para que cualquiera que interactúe con el bot pueda obtener información detallada sobre él en un entorno profesional.
 
 ## Características
 
-- **Interfaz de usuario atractiva** con animaciones suaves y un diseño limpio.
-- **Desplazamiento automático** en la ventana de chat.
-- **Soporte para mensajes del usuario y del bot**, con diferentes estilos visuales.
-- **Tecnología moderna** como React, CSS3, y efectos de fondo.
+- **Respuestas personalizadas**: El chatbot responde preguntas relacionadas con la carrera y habilidades de Matías.
+- **Interfaz amigable**: Diseño limpio y moderno para una experiencia de usuario fluida.
+- **Soporte para múltiples consultas**: Los usuarios pueden preguntar sobre diferentes aspectos de la carrera profesional de Matías, desde experiencia laboral hasta proyectos realizados.
 
 ## Requisitos previos
+
 
 Asegúrate de tener instalados los siguientes programas en tu máquina:
 
