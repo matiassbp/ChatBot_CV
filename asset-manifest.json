@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/matiassbp/ChatBot_CV/static/css/main.ce9ed704.css",
+    "main.js": "/matiassbp/ChatBot_CV/static/js/main.591f2427.js",
+    "static/js/453.7e701607.chunk.js": "/matiassbp/ChatBot_CV/static/js/453.7e701607.chunk.js",
+    "static/media/logo.svg": "/matiassbp/ChatBot_CV/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/matiassbp/ChatBot_CV/index.html",
+    "main.ce9ed704.css.map": "/matiassbp/ChatBot_CV/static/css/main.ce9ed704.css.map",
+    "main.591f2427.js.map": "/matiassbp/ChatBot_CV/static/js/main.591f2427.js.map",
+    "453.7e701607.chunk.js.map": "/matiassbp/ChatBot_CV/static/js/453.7e701607.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce9ed704.css",
+    "static/js/main.591f2427.js"
+  ]
+}
