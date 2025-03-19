@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { AiOutlineClose, AiOutlineSend, AiOutlineLine  } from "react-icons/ai";
+import { SiGooglegemini } from "react-icons/si";
 
 // Importamos Tailwind directamente
 import "tailwindcss/tailwind.css";
@@ -20,7 +22,7 @@ const Chatbot = () => {
     "¿Dónde estudió?",
     "¿Qué proyectos ha desarrollado?",
     "¿Qué idiomas habla?",
-    "¿Tiene experiencia en cloud?",
+    "¿Qué metodologías ágiles maneja?",
   ];
 
 
@@ -287,13 +289,9 @@ const Chatbot = () => {
               className="text-gray-400 hover:text-white focus:outline-none transform transition-transform hover:scale-110"
             >
               {isExpanded ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clipRule="evenodd" />
-                </svg>
+                <AiOutlineLine className="h-5 w-5" fill="currentColor"/>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />
-                </svg>
+                <AiOutlineClose className="h-5 w-5" fill="currentColor"/>
               )}
             </button>
           </div>
@@ -372,8 +370,6 @@ const Chatbot = () => {
                 rows="1"
               />
               <motion.button
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
                 onClick={sendMessage}
                 disabled={!input.trim()}
                 className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300
@@ -381,9 +377,7 @@ const Chatbot = () => {
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-glow'
                     : 'bg-gray-700 cursor-not-allowed opacity-50'}`}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white transform rotate-90" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11h4a1 1 0 00.936-.649l4-11a1 1 0 00-1.196-1.3l-7 2a1 1 0 00-.74.983V2.553z" />
-                </svg>
+                <AiOutlineSend className="h-5 w-5 text-white rotate-180"  />
               </motion.button>
             </div>
           </div>
@@ -392,13 +386,11 @@ const Chatbot = () => {
         {/* Footer */}
         <footer className="mt-6 text-center text-sm text-blue-200 opacity-70 py-4">
           <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4">
-            <p>© 2025 Matías Benoni Peralta</p>
+            <p>Proyecto realizado por fines educativos</p>
+            <span>-</span>
             <div className="flex items-center">
-              <span>Powered by</span>
-              <svg className="h-5 w-auto mx-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#8E75B2" />
-                <path d="M16.1 7.1625L12.5375 12L16.1 16.8375L12.5375 21.6562L7.9 16.8375L12.5375 12L7.9 7.1625L12.5375 2.34375L16.1 7.1625Z" fill="white" />
-              </svg>
+              <span>API y recursos proporcionados por</span>
+              <SiGooglegemini className="h-5 w-auto mx-2 bg-violet-500 rounded-2xl" viewBox="0 0 24 24"  />
               <span>Google Gemini</span>
             </div>
           </div>
