@@ -1,179 +1,90 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Atkinson Hyperlegible Next', sans-serif;
-  background: linear-gradient(180deg, rgba(3,1,41,1) 0%, rgb(70, 70, 100) 50%, rgb(27, 67, 75) 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Estilos para efectos de cristal (glassmorphism) */
+.glassmorphism {
+  background: rgba(17, 25, 40, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-h1 {
-  margin-bottom: 20px;
-  text-align: center;
+/* Efectos de sombras y glow */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
 }
 
-.chat-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  max-width: 800px;
-  height: 85vh;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  flex-direction: column;
+.shadow-soft {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.chat-box {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+/* Animaciones refinadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-.messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-.message {
-  max-width: 75%;
-  padding: 12px;
-  margin-bottom: 10px;
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Estilos para la barra de desplazamiento personalizada */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thumb-blue-500::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #6366f1);
   border-radius: 10px;
-  word-wrap: break-word;
-  font-size: 16px;
-  animation: fadeIn 0.3s ease-in-out;
-}
-.messages::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
 }
 
-.messages {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.scrollbar-track-gray-800::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.3);
+  border-radius: 10px;
 }
 
-.user {
-  align-self: flex-end;
-  background-color: #3a86ff;
-  color: #fff;
-  text-align: right;
+/* Efectos de transición para hover */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.bot {
-  align-self: flex-start;
-  background-color: #444;
-  color: #fff;
-  text-align: left;
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
 }
 
-.input-area {
-  display: flex;
-  padding: 15px;
-  border-top: 1px solid #333;
-  width: 100%;
-}
-
-.chat-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  margin-top: 15px;
-  color: #007bff;
-}
-
-.chat-subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.input-area input {
-  flex: 1;
-  margin-top: 10px;
-  border-radius: 25px;
-  padding: 12px;
-  border: none;
-  background-color: #ffffff;
-  color: white;
-  font-size: 16px;
-}
-
-.input-area input:focus {
-  outline: none;
-}
-
-.input-area button {
-  border-radius: 25px;
-  padding: 12px 20px;
-  margin-left: 10px;
-  border: none;
-  background-color: #3a86ff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.input-area button:hover {
-  background-color: #1e62d0;
-}
-
-.input-area {
-  display: flex;
-  padding: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-
-.input-area input {
-  flex: 1;
-  border-radius: 25px;
-  padding: 12px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.661);
-  color: white;
-  font-size: 16px;
-  outline: none;
-}
-
-.input-area button {
-  border-radius: 50px;
-  padding: 12px 16px;
-  margin-left: 10px;
-  border: none;
-  background: linear-gradient(135deg, #3a86ff, #007bff);
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.input-area button:hover {
-  background: linear-gradient(135deg, #1e62d0, #0056b3);
-  transform: scale(1.1);
-}
-
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(10px);
+/* Media queries para mejor responsividad */
+@media (max-width: 640px) {
+  .chat-container {
+    border-radius: 18px;
+    margin: 8px;
   }
-  to {
-      opacity: 1;
-      transform: translateY(0);
+  
+  .message-bubble {
+    max-width: 85%;
+    padding: 12px;
   }
+}
+
+/* Tipografía mejorada */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Efecto de gradient para texto */
+.text-gradient {
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

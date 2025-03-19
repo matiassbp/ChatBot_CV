@@ -1,7 +1,6 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Chatbot from './ChatBot';
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
