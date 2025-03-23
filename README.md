@@ -1,28 +1,85 @@
-# Chatbot React
+# Asistente Virtual - Chatbot CV 🤖
 
-Este proyecto es un chatbot interactivo creado con React, diseñado para ser un asistente virtual personal para Matías. Su objetivo es responder preguntas sobre la trayectoria profesional, habilidades, proyectos y experiencia de Matías. Es una herramienta para que cualquiera que interactúe con el bot pueda obtener información detallada sobre él en un entorno profesional.
+Un asistente virtual interactivo desarrollado con React que utiliza la API de Google Gemini para proporcionar información sobre la experiencia profesional, habilidades técnicas y formación académica de Matías Benoni.
+
 
 ## Características
 
-- **Respuestas personalizadas**: El chatbot responde preguntas relacionadas con la carrera y habilidades de Matías.
-- **Interfaz amigable**: Diseño limpio y moderno para una experiencia de usuario fluida.
-- **Soporte para múltiples consultas**: Los usuarios pueden preguntar sobre diferentes aspectos de la carrera profesional de Matías, desde experiencia laboral hasta proyectos realizados.
+- **Interfaz de chat moderna** con diseño responsive
+- **Animaciones fluidas** utilizando Framer Motion
+- **Preguntas sugeridas** para facilitar la interacción
+- **Indicador de escritura** para simular respuestas humanas
+- **Formateo de mensajes** (listas, negritas)
+- **Optimizado para dispositivos móviles** con opción para expandir/contraer
 
-## Requisitos previos
+## Tecnologías
 
+- **React**: Biblioteca principal para la interfaz de usuario
+- **Tailwind CSS**: Framework CSS para el diseño
+- **Framer Motion**: Para animaciones fluidas
+- **Axios**: Para realizar peticiones HTTP
+- **Google Gemini API**: Para generar respuestas inteligentes
+- **React Icons**: Iconos visuales
 
-Asegúrate de tener instalados los siguientes programas en tu máquina:
+## Instalación
 
-- [Node.js](https://nodejs.org/) (v12 o superior)
-- [npm](https://www.npmjs.com/) (gestor de paquetes de Node.js)
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/matiassbp/ChatBot_CV
+   cd ChatBot_CV
+   ```
 
-## Clonación del repositorio
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-Para comenzar, clona este repositorio en tu máquina local:
+3. Crea un archivo `.env` en la raíz del proyecto con tu clave API de Google Gemini:
+   ```
+   REACT_APP_GEMINI_API_KEY=tu_clave_api_aquí
+   ```
 
-```bash
-git clone https://github.com/matiassbp/ChatBot_CV.git
-cd chatbot-react
-npm install
-npm start
+4. Inicia la aplicación en modo desarrollo:
+   ```bash
+   npm start
+   ```
+
+## Estructura del Proyecto
+
 ```
+src/
+├── components/
+│   ├── chatbot/
+│   │   ├── api.js                # Servicios de API para Gemini
+│   │   ├── Chatbot.js            # Componente principal
+│   │   ├── ChatContainer.js      # Contenedor de la interfaz de chat
+│   │   ├── Message.js            # Componente de mensaje individual
+│   │   ├── MessageList.js        # Lista de mensajes
+│   │   └── SuggestedQuestions.js # Componente de preguntas sugeridas
+│   ├── public/
+│   │   ├── Footer.js             # Pie de página
+│   │   └── Header.js             # Encabezado
+│   └── styles/
+│       └── globalStyles.js       # Estilos globales
+├── App.js                        # Componente raíz
+└── index.js                      # Punto de entrada
+```
+
+## Uso
+
+El chatbot está preconfigurado para responder preguntas sobre Matías Benoni, incluyendo:
+- Experiencia laboral
+- Habilidades técnicas
+- Educación
+- Idiomas
+- Proyectos desarrollados
+- Metodologías ágiles
+
+Ejemplos de preguntas:
+- "¿Cuál es su experiencia laboral?"
+- "¿Qué tecnologías maneja?"
+- "¿Dónde estudió?"
+
+## Personalización
+
+Para adaptar el chatbot a otro perfil profesional, modifica la función `createEnhancedPrompt` en `Chatbot.js` con la información correspondiente.
